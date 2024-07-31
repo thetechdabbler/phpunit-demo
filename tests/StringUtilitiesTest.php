@@ -1,10 +1,10 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\StringUtilities;
+use Demo\App\StringUtilities;
 
 /**
- * @covers App\StringUtilities
+ * @covers Demo\App\StringUtilities
  */
 class StringUtilitiesTest extends TestCase
 {

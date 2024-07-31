@@ -1,10 +1,10 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\MathHelper;
+use Demo\App\MathHelper;
 
 /**
- * @covers App\MathHelper
+ * @covers Demo\App\MathHelper
  */
 class MathHelperTest extends TestCase
 {
