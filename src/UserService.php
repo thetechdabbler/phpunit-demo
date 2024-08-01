@@ -1,9 +1,16 @@
 <?php
 namespace Demo\App;
+
 class UserService
 {
     private $users = [];
     private $loggedInUsers = [];
+    private $objMailer;
+
+    public function __construct(Mailer $objMailer)
+    {
+        $this->objMailer = $objMailer;
+    }
 
     public function register($username, $password)
     {
@@ -12,6 +19,10 @@ class UserService
         }
 
         $this->users[$username] = password_hash($password, PASSWORD_BCRYPT);
+        $result = $this->objMailer->sendWelcomeMail("user@email");
+        if (!$result) {
+            throw new \Exception('Mail not sent');
+        }
         return true;
     }
 

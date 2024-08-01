@@ -8,31 +8,49 @@ use Demo\App\MathHelper;
  */
 class MathHelperTest extends TestCase
 {
+    /**
+     * Summary of beforeTest
+     * @return void
+     * @before
+     */
+    protected function beforeTest(): void
+    {
+        $this->sut = new MathHelper();
+    }
+
+    public $sut;
+
+    /**
+     * 
+     * @covers Demo\App\MathHelper::add
+     * @return void
+     * @group mitesh
+     * @group pratap
+     */
     public function testMultiply()
     {
-        $operations = new MathHelper();
-        $result = $operations->multiply(3, 4);
+        $result = $this->sut->multiply(3, 4);
         $this->assertEquals(12, $result);
     }
 
     public function testDivide()
     {
-        $operations = new MathHelper();
-        $result = $operations->divide(10, 2);
+
+        $result = $this->sut->divide(10, 2);
         $this->assertEquals(5, $result);
     }
 
     public function testDivideByZero()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $operations = new MathHelper();
-        $operations->divide(10, 0);
+
+        $this->sut->divide(10, 0);
     }
 
     public function testSubtract()
     {
         $operations = new MathHelper();
-        $result = $operations->subtract(10, 2);
+        $result = $this->sut->subtract(10, 2);
         $this->assertEquals(8, $result);
     }
 }

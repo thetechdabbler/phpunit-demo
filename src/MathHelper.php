@@ -2,6 +2,9 @@
 
 namespace Demo\App;
 
+/**
+ * Summary of MathHelper
+ */
 class MathHelper
 {
     public function multiply($a, $b)
@@ -20,5 +23,10 @@ class MathHelper
     public function subtract($a, $b)
     {
         return $a - $b;
+    }
+
+    public function add($a, $b)
+    {
+        return round($a + $b, 2);
     }
 }
