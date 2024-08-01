@@ -1,0 +1,15 @@
+{
+  "phpunit.command": "docker exec -t phpunit_demo /bin/sh -c",
+  "phpunit.php": "php",
+  "phpunit.phpunit": "vendor/bin/phpunit",
+  "phpunit.args": ["-c", "phpunit.xml"],
+  "phpunit.paths": {
+    // ${pwd} (current directory) is mounted to /app
+    "${workspaceFolder}": "/app"
+    // ${workspaceFolder} is mapped to /app
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[php]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  }
+}
