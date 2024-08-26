@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   php:
     container_name: phpunit_demo
@@ -7,3 +5,5 @@ services:
     volumes:
       - .:/app
     command: tail -f /dev/null
+    ports:
+      - "8000:8000"

@@ -17,7 +17,13 @@ WORKDIR /app
 COPY . /app
 
 # Install PHP dependencies
-#RUN composer install
+RUN composer install
 
 # Run PHPUnit tests
 #CMD ["./vendor/bin/phpunit"]
+
+# Run the application as a web server
+CMD ["php", "-S", "localhost:8000", "-t", "public"]
+
+# Expose the port the app runs on
+EXPOSE 8000
